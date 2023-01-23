@@ -18,7 +18,7 @@ import ButtonComponent from '../Button'
 import templates from '../../data'
 import axios from 'axios'
 import FileDownload from 'js-file-download'
-import REACT_APP_URL from 'process.env.REACT_APP_URL'
+// import REACT_APP_URL from 'process.env.REACT_APP_URL'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -166,7 +166,7 @@ function CertificateGeneratorByImage({ data }) {
 
   function sendReq() {
     axios({
-      url: `${REACT_APP_URL}/cert`,
+      url: `${process.env.REACT_APP_URL}/cert`,
       method: 'POST',
       data: {
         template: 't1.png',
@@ -184,7 +184,7 @@ function CertificateGeneratorByImage({ data }) {
   }
   function certificateDownload() {
     axios({
-      url: `${REACT_APP_URL}/downloads`,
+      url: `${process.env.REACT_APP_URL}/downloads`,
       method: 'POST',
       data: {
         template: 't1.png',
